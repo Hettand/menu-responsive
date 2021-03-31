@@ -1,0 +1,73 @@
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(img/fondo2.jpg);
+    background-attachment: fixed;
+    background-size: 100vw 100vh;
+}
+
+header {
+    width: 100%;
+    background-color: #2240af45;
+    height: 55px;
+}
+
+#btn-menu,
+.iconMenu,
+.iconClose {
+    display: none;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    font-size: 18px;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: #957136;
+    padding: 20px;
+}
+
+@media(max-width: 799px) {
+    .iconClose,
+    .iconMenu {
+        display: block;
+        padding: 13px;
+        cursor: pointer;
+    }
+    .menu {
+        width: 100%;
+        position: absolute;
+        transform: translateY(-200%);
+        transition: all 1s;
+        animation: desaparece 1s 1;
+        top: 0;
+    }
+    @keyframes desaparece {
+        0%,
+        100% {
+            margin-top: -100%;
+        }
+    }
+    ul {
+        flex-direction: column;
+    }
+    li {
+        border-bottom: 1px solid rgb(149, 113, 54, 0.6);
+        background-color: black;
+    }
+    #btn-menu:checked~.menu {
+        transform: translateY(0);
+        transition: all 1s;
+    }
+    li:nth-child(n+2):nth-child(-n+6):hover {
+        background-color: #2240af45;
+    }
+}
